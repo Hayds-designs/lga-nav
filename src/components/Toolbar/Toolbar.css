@@ -1,0 +1,102 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 56px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.toolbar__logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #262772;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.toolbar__project-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: text;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.toolbar__project-name:hover {
+  border-color: rgba(80, 180, 224, 0.4);
+  background: #f9fafb;
+}
+
+.toolbar__project-input {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1.5px solid #50B4E0;
+  outline: none;
+  background: white;
+  min-width: 160px;
+  max-width: 320px;
+  font-family: inherit;
+}
+
+.toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.toolbar__btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.toolbar__btn--secondary {
+  background: none;
+  color: #9ca3af;
+  border-color: transparent;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.toolbar__btn--secondary:hover {
+  color: #374151;
+}
+
+.toolbar__btn--primary {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: transparent;
+}
+
+.toolbar__btn--primary:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
