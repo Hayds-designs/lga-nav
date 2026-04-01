@@ -11,6 +11,7 @@ const DEFAULT_STATE = {
       label: 'Home',
       path: '/',
       type: 'link',
+      navState: 'logged-out',
       notes: '',
       children: [],
     },
@@ -19,6 +20,7 @@ const DEFAULT_STATE = {
       label: 'About',
       path: '/about',
       type: 'link',
+      navState: 'logged-out',
       notes: '',
       children: [
         { id: 'item-about-team', label: 'Our Team', path: '/about/team', children: [] },
@@ -30,6 +32,7 @@ const DEFAULT_STATE = {
       label: 'Services',
       path: '/services',
       type: 'link',
+      navState: 'logged-out',
       notes: '',
       children: [],
     },
@@ -38,6 +41,7 @@ const DEFAULT_STATE = {
       label: 'Contact',
       path: '/contact',
       type: 'secondary-cta',
+      navState: 'logged-out',
       notes: '',
       children: [],
     },
@@ -88,7 +92,7 @@ export function useNavTree() {
       ...s,
       navTree: [
         ...s.navTree,
-        { id: newId(), label: 'New Page', path: '/new-page', type: 'link', notes: '', children: [] },
+        { id: newId(), label: 'New Page', path: '/new-page', type: 'link', navState: 'logged-out', notes: '', children: [] },
       ],
     }))
   }

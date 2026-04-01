@@ -64,6 +64,7 @@ export function NavItemRow({
   const [childDragIndex, setChildDragIndex] = useState(null)
   const [childOverIndex, setChildOverIndex] = useState(null)
   const notesRef = useRef(null)
+  const navStateMenu = useFloatingMenu()
   const typeMenu = useFloatingMenu()
   const optionsMenu = useFloatingMenu()
 
@@ -127,6 +128,26 @@ export function NavItemRow({
           )}
         </div>
         <div className="nav-item-row__actions">
+          <div className="nav-item-row__options-wrap" ref={navStateMenu.wrapRef}>
+            <button ref={navStateMenu.btnRef} className={`nav-item-row__type-btn nav-item-row__type-btn--navstate${(item.navState || 'logged-out') === 'member' ? ' nav-item-row__type-btn--member' : ''}`} onClick={navStateMenu.toggle}>
+              <span>{{ 'logged-out': 'Logged out', 'member': 'Member' }[item.navState || 'logged-out']}</span>
+              <span className="nav-item-row__type-caret">▾</span>
+            </button>
+            {navStateMenu.open && createPortal(
+              <div ref={navStateMenu.menuRef} className="nav-item-row__menu" style={{ position: 'fixed', top: navStateMenu.pos.top, right: navStateMenu.pos.right }}>
+                {[['logged-out', 'Logged out'], ['member', 'Member']].map(([val, label]) => (
+                  <button
+                    key={val}
+                    className={`nav-item-row__menu-item${(item.navState || 'logged-out') === val ? ' nav-item-row__menu-item--active' : ''}`}
+                    onClick={() => { onUpdate(item.id, 'navState', val); navStateMenu.setOpen(false) }}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>,
+              document.body
+            )}
+          </div>
           <div className="nav-item-row__options-wrap" ref={typeMenu.wrapRef}>
             <button ref={typeMenu.btnRef} className="nav-item-row__type-btn" onClick={typeMenu.toggle}>
               <span>{{ link: 'Link', 'primary-cta': 'Primary CTA', 'secondary-cta': 'Secondary CTA' }[item.type || 'link']}</span>
