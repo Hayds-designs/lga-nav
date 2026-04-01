@@ -20,6 +20,7 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 8px 4px 0;
+  flex-shrink: 0;
 }
 
 .editor__list-title {
@@ -54,6 +55,7 @@
   color: #9ca3af;
   padding: 6px 4px 8px;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .editor__project-input {
@@ -273,6 +275,7 @@
   overflow: hidden;
   transition: border-color 0.15s, box-shadow 0.15s;
   cursor: default;
+  flex-shrink: 0;
 }
 
 .nav-item-row:hover {

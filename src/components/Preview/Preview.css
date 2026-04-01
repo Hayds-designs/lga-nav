@@ -83,7 +83,7 @@
 .preview__window {
   background: white;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow:
     0 4px 32px rgba(0, 0, 0, 0.12),
     0 1px 4px rgba(0, 0, 0, 0.06);
@@ -100,6 +100,7 @@
   padding: 0 12px;
   gap: 10px;
   border-bottom: 1px solid #d4d4d4;
+  border-radius: 10px 10px 0 0;
 }
 
 .preview__dots {
@@ -145,6 +146,8 @@
 
 .preview__page {
   background: white;
+  border-radius: 0 0 10px 10px;
+  position: relative;
 }
 
 /* ── Nav bar ──────────────────────────────────── */
@@ -200,12 +203,12 @@
   top: 64px;
   left: 0;
   right: 0;
+  bottom: 0;
   background: white;
   border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
   padding: 8px 0;
   z-index: 200;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
 }
 
 .preview-nav__mobile-row {

@@ -12,7 +12,7 @@ export function NavBar({ navTree, projectName, isMobile }) {
 
   if (isMobile) {
     return (
-      <nav className="preview-nav" style={{ position: 'relative' }}>
+      <nav className="preview-nav">
         <span className="preview-nav__logo">{projectName || 'Website Name'}</span>
         <div className="preview-nav__mobile-actions">
           {ctas.filter(item => item.type === 'primary-cta').map(item => (
